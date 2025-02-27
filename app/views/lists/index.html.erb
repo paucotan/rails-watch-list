@@ -4,10 +4,13 @@
 
 <div class="container">
 <h2>Lists</h2>
+<ul>
   <% @lists.each do |list|  %>
-   <%= link_to list.name, list_path(list)  %>
+  <li><%= link_to list.name, list_path(list) %><li>
   <% end %>
-  <p><%= link_to "create new list", new_list_path  %></p>
+</ul>
+
+<p><%= link_to "create new list", new_list_path  %></p>
 
 
 <br>
