@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :movies, only: [:index, :show]
 
   resources :lists do
-    resources :bookmarks
+    resources :bookmarks, only: [:new, :create, :destroy]
   end
 end
