@@ -18,8 +18,9 @@ class BookmarksController < ApplicationController
 
   def destroy
     @bookmark = Bookmark.find(params[:id])
+    list = @bookmark.list # Store the parent list before deleting the bookmark
     @bookmark.destroy
-    redirect_to @list, notice: 'bookmark was successfully deleted'
+    redirect_to list_path(list), notice: "Bookmark removed!"
   end
 
   private
