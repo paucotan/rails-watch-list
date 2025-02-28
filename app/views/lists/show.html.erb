@@ -2,9 +2,11 @@
 <p>Movies in this list:</p>
 
 <ul>
-  <% @list.movies.each do |movie| %>
-  <li> <%= link_to movie.title, movie_path(movie)  %></li>
+  <% @list.bookmarks.each do |bookmark| %>
+  <li> <%= link_to bookmark.movie.title, movie_path(bookmark.movie)  %> "<%= bookmark.comment %>"
+        <%= link_to "Remove", list_bookmark_path(@list, bookmark), method: :delete, data: { confirm: "Are you sure?" } %>
+  </li>
   <% end %>
 </ul>
-
+<%= link_to "Add a Movie", new_list_bookmark_path(@list) %>
 <%= link_to "back to lists", lists_path  %>
