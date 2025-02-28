@@ -1,9 +1,9 @@
 <h1>Create a new list</h1>
 
-<%= form_with model: @list do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit "Create list" %>
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name %>
+  <%= f.input :image, as: :file %> <!-- Add this for image upload -->
+  <%= f.button :submit %>
 <% end %>
 
 <%= link_to "back to list", lists_path  %>

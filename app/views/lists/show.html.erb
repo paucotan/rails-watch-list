@@ -1,6 +1,9 @@
 
 
-<div class="card mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg); height: 200px;">
+<div class="card mb-3" style="height: 200px; background-size: cover; background-position: center;
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url(<%= @list.image.present? ? @list.image.url : 'https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg' %>);">
+
   <div class="card-body text-white">
     <h1 class="card-title"><%= @list.name %></h1>
   </div>
